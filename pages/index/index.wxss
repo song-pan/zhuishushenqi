@@ -1,0 +1,101 @@
+/* 搜索图标 */
+.search-png {
+  width: 100%;
+}
+
+/* 搜索输入框点击样式 */
+.search-hover {
+  opacity: 0.9;
+}
+
+/* 轮播图样式 */
+swiper-item image {
+  width: 100%;
+  border-radius: 15rpx;
+}
+
+/* 导航栏样式 */
+.navbar {
+  display: flex;
+  font-size: 22rpx;
+  color: #888787;
+  justify-content: space-around;
+}
+
+.selected-icon {
+  background-color: #ddd;
+}
+
+.icon-style {
+  width: 100rpx;
+  text-align: center;
+}
+
+.icon-style image {
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* 首页推荐分类 */
+.category>text:first-child {
+  font-size: 40rpx;
+}
+
+.category>text:nth-child(2) {
+  float: right;
+  font-size: 24rpx;
+  color: #b8b8bb;
+}
+
+.category>text:nth-child(2) text {
+  font-size: 30rpx;
+}
+
+/* 书籍封面 */
+.content {
+  display: flex;
+}
+
+.content-img {
+  flex: 1;
+}
+
+.content-img image {
+  width: 160rpx;
+}
+
+.article {
+  flex: 3;
+  color: #888787;
+  font-size: 22rpx;
+  margin-left: 16rpx;
+}
+
+.title {
+  color: #000;
+  font-weight: bold;
+  font-size: 34rpx;
+}
+
+.shortInro {
+  font-size: 26rpx;
+  margin: 30rpx 0;
+  /* 文本两行显示并且超出部分省略号 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.author {
+  margin-right: 16rpx;
+}
+
+.author text {
+  margin-right: 6rpx;
+}
+
+.latelyFollower {
+  color: red;
+}

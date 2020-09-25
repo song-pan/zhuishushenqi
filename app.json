@@ -1,0 +1,41 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/shelf/shelf",
+    "pages/search/search",
+    "pages/me/me",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "追书神器",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+   "color":"#8a8a8a",
+   "selectedColor":"#d81e06",
+   "list":[
+     {
+       "pagePath":"pages/shelf/shelf",
+       "text": "书架",
+       "iconPath":"images/shelf.png",
+       "selectedIconPath":"images/selected-shelf.png" 
+     },
+     {
+      "pagePath":"pages/index/index",
+      "text": "书城",
+      "iconPath":"images/city.png",
+      "selectedIconPath":"images/selected-city.png" 
+    },
+    {
+      "pagePath":"pages/me/me",
+      "text": "我的",
+      "iconPath":"images/my.png",
+      "selectedIconPath":"images/selected-my.png" 
+    }
+   ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

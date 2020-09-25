@@ -1,0 +1,19 @@
+var substr=function(str,start){
+	var data=decodeURIComponent(str).substring(start);
+	return data;
+};
+var float=function(num){
+	var data=(num/10000).toFixed(1)
+	return data
+};
+var deltitle=function(str){
+	// if(str.indexOf(' '))
+	var reg=getRegExp('[\(（][^\)）]+[\)）]$','g');
+	var title =str.replace(reg,'');
+	return title
+};
+module.exports={
+	deltitle:deltitle,
+	substr:substr,
+	float:float
+};

@@ -1,0 +1,64 @@
+<wxs src="../../scripts/common.wxs" module="string"></wxs>
+<view class="container">
+	<!-- 搜索跳转框 -->
+	<view hover-class="search-hover">
+		<image class="search-png" src="/images/search.png" mode="widthFix" bindtap="tosearch"></image>
+	</view>
+	<!-- 轮播图 -->
+	<view>
+		<swiper autoplay="true">
+			<swiper-item>
+				<image src="/images/swiper1.png" mode="widthFix"></image>
+			</swiper-item>
+			<swiper-item>
+				<image src="/images/swiper2.png" mode="widthFix"></image>
+			</swiper-item>
+			<swiper-item>
+				<image src="/images/swiper3.png" mode="widthFix"></image>
+			</swiper-item>
+			<swiper-item>
+				<image src="/images/swiper4.png" mode="widthFix"></image>
+			</swiper-item>
+		</swiper>
+	</view>
+	<!-- 导航栏 -->
+	<view class="navbar">
+		<view class="icon-style" hover-class="selected-icon">
+			<image src="/images/ranking.png" mode="widthFix"></image>
+			<text>排行榜</text>
+		</view>
+		<view class="icon-style" hover-class="selected-icon">
+			<image src="/images/VIP.png" mode="widthFix"></image>
+			<text>VIP</text>
+		</view>
+		<view class="icon-style" hover-class="selected-icon">
+			<image src="/images/classify.png" mode="widthFix"></image>
+			<text>分类</text>
+		</view>
+	</view>
+	<!-- 首页推荐 -->
+	<view class="recommend">
+		<!-- 分类类别 -->
+		<view class="category" wx:for="{{recommend}}" wx:key="index">
+			<text>{{item.headline}}</text>
+			<text bindtap="tomore">查看更多<text> ></text></text>
+			<view class="content" wx:for="{{item.books}}" wx:for-item="book" wx:key="index">
+				<view class="content-img">
+					<image src="{{string.substr(book.cover,7)}}" mode="widthFix"></image>
+				</view>
+				<view class="article">
+					<view class="title">{{string.deltitle(book.title)}}</view>
+					<view class="shortInro">{{book.shortIntro}}</view>
+					<view>
+						<text class="author"><text class="iconfont icon-wode"></text>{{book.author}}</text>
+						<text class="latelyFollower">{{book.latelyFollower>10000 ?string.float(book.latelyFollower)+'万': book.latelyFollower}}人气</text>
+						<text class="majorCate">{{book.majorCate}}</text>
+						<text></text>
+						<text></text>
+					</view>
+				</view>
+			</view>
+		</view>
+
+	</view>
+</view>
