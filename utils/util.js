@@ -23,11 +23,13 @@ const requestPromise = myUrl => {
   return new Promise((resolve, reject) => {
   wx.request({
   url: myUrl,
+  method:'GET',
   success: res => resolve(res)
   })
   })
  }
  // 我把这个函数放在了utils.js中，这样在需要时可以直接引入
+
 module.exports = {
   requestPromise:requestPromise,
   formatTime: formatTime

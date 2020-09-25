@@ -42,19 +42,20 @@
 		<view class="category" wx:for="{{recommend}}" wx:key="index">
 			<text>{{item.headline}}</text>
 			<text bindtap="tomore">查看更多<text> ></text></text>
+			<!-- 书籍信息 -->
 			<view class="content" wx:for="{{item.books}}" wx:for-item="book" wx:key="index">
 				<view class="content-img">
 					<image src="{{string.substr(book.cover,7)}}" mode="widthFix"></image>
 				</view>
 				<view class="article">
 					<view class="title">{{string.deltitle(book.title)}}</view>
-					<view class="shortInro">{{book.shortIntro}}</view>
+					<view class="shortInro">{{book.longIntro}}</view>
 					<view>
 						<text class="author"><text class="iconfont icon-wode"></text>{{book.author}}</text>
 						<text class="latelyFollower">{{book.latelyFollower>10000 ?string.float(book.latelyFollower)+'万': book.latelyFollower}}人气</text>
 						<text class="majorCate">{{book.majorCate}}</text>
-						<text></text>
-						<text></text>
+						<text>{{book.isSerial? '连载':'完本'}}</text>
+						<text>{{book.rating.score}}</text>
 					</view>
 				</view>
 			</view>
