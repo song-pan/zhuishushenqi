@@ -1,0 +1,11 @@
+<view class="container">
+	<!-- 男女选项卡 -->
+	<view class="gender" bindtap="switchTab">
+		<text  class="tabBar {{getIndex==index ? 'selected-tabBar' : ''}}" wx:for="{{gender}}"
+			wx:key="index"  data-index="{{index}}">{{item=="male"?"男频":"女频"}}</text>
+	</view>
+	<!-- 侧边排行榜 -->
+	<view class="slideBar">
+		<text wx:for="{{rank}}" wx:key="index">{{item.shortTitle}}</text>
+	</view>
+</view>

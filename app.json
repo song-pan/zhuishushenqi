@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/rank/rank",
     "pages/shelf/shelf",
     "pages/search/search",
     "pages/me/me",

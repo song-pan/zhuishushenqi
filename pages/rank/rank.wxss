@@ -1,0 +1,21 @@
+.gender {
+	padding: 25rpx 0;
+	border-bottom: 1rpx solid #ddd;
+}
+
+.tabBar {
+	padding: 0 150rpx;
+	padding-bottom: 25rpx;
+	color: #888787;
+}
+
+/* 头部选项卡选中样式 */
+.selected-tabBar {
+	color: #ff0000;
+	border-bottom: 1rpx solid #ff0000;
+}
+/* 侧边栏样式 */
+.slideBar{
+	display: flex;
+	flex-direction: column;
+}

@@ -23,17 +23,11 @@
 	</view>
 	<!-- 导航栏 -->
 	<view class="navbar">
-		<view class="icon-style" hover-class="selected-icon">
-			<image src="/images/ranking.png" mode="widthFix"></image>
-			<text>排行榜</text>
-		</view>
-		<view class="icon-style" hover-class="selected-icon">
-			<image src="/images/VIP.png" mode="widthFix"></image>
-			<text>VIP</text>
-		</view>
-		<view class="icon-style" hover-class="selected-icon">
-			<image src="/images/classify.png" mode="widthFix"></image>
-			<text>分类</text>
+		<view bindtap="params" wx:for="{{navbar}}" wx:key="index"  url="{{item.url}}" data-index="{{index}}">
+			<view class="icon-style"  >
+				<image src="{{item.img}}" mode="widthFix"></image>
+				<text>{{item.text}}</text>
+			</view>
 		</view>
 	</view>
 	<!-- 首页推荐 -->
@@ -41,21 +35,24 @@
 		<!-- 分类类别 -->
 		<view class="category" wx:for="{{recommend}}" wx:key="index">
 			<text>{{item.headline}}</text>
-			<text bindtap="tomore">查看更多<text> ></text></text>
+			<navigator bindtap="tomore">查看更多<text> ></text></navigator>
 			<!-- 书籍信息 -->
 			<view class="content" wx:for="{{item.books}}" wx:for-item="book" wx:key="index">
 				<view class="content-img">
-					<image src="{{string.substr(book.cover,7)}}" mode="widthFix"></image>
+					<image src="{{string.substr(book.cover,7)}}" ></image>
 				</view>
 				<view class="article">
 					<view class="title">{{string.deltitle(book.title)}}</view>
 					<view class="shortInro">{{book.longIntro}}</view>
 					<view>
 						<text class="author"><text class="iconfont icon-wode"></text>{{book.author}}</text>
-						<text class="latelyFollower">{{book.latelyFollower>10000 ?string.float(book.latelyFollower)+'万': book.latelyFollower}}人气</text>
-						<text class="majorCate">{{book.majorCate}}</text>
-						<text>{{book.isSerial? '连载':'完本'}}</text>
-						<text>{{book.rating.score}}</text>
+						<text
+							class="latelyFollower">{{book.latelyFollower>10000 ?string.float(book.latelyFollower)+'万': book.latelyFollower}}人气</text>
+							<text class="grayicon">
+								<text>{{string.float(book.rating.score)}}</text>
+								<text>{{book.isSerial? '连载':'完本'}}</text>
+								<text>{{book.majorCate}}</text>
+						</text>
 					</view>
 				</view>
 			</view>

@@ -22,10 +22,6 @@ swiper-item image {
   justify-content: space-around;
 }
 
-.selected-icon {
-  background-color: #ddd;
-}
-
 .icon-style {
   width: 100rpx;
   text-align: center;
@@ -37,23 +33,27 @@ swiper-item image {
 }
 
 /* 首页推荐分类 */
+.category {
+  margin: 40rpx 0;
+}
 .category>text:first-child {
   font-size: 40rpx;
 }
 
-.category>text:nth-child(2) {
+.category>navigator {
   float: right;
   font-size: 24rpx;
-  color: #b8b8bb;
+  color: #888787;
 }
 
-.category>text:nth-child(2) text {
+.category navigator text {
   font-size: 30rpx;
 }
 
-/* 书籍封面 */
+/* 书籍信息 */
 .content {
   display: flex;
+  margin-top: 35rpx;
 }
 
 .content-img {
@@ -62,6 +62,8 @@ swiper-item image {
 
 .content-img image {
   width: 160rpx;
+  height: 214rpx;
+  border-radius: 6rpx;
 }
 
 .article {
@@ -95,7 +97,18 @@ swiper-item image {
 .author text {
   margin-right: 6rpx;
 }
-
+/* 人气 */
 .latelyFollower {
   color: red;
+}
+/* 书籍信息右下角小图标 */
+.grayicon text{
+  float: right;
+  width: 35rpx;
+  text-align: center;
+  font-size: 16rpx;
+  padding: 10rpx;
+  border-radius: 60%;
+  background-color: #e2e2e5;
+  margin-left: 10rpx;
 }
