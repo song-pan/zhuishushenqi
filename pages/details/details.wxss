@@ -1,0 +1,35 @@
+
+/* 书籍详情 */
+.books{
+	display: flex;
+}
+.book-image image{
+	width: 160rpx;
+  height: 214rpx;
+  border-radius: 6rpx;
+}
+.book-score{
+	position: absolute;
+	display:flex;
+	margin: 40rpx 0 20rpx 80rpx;
+}
+
+.stars{
+	z-index: 1;
+	width: 63rpx;
+	height: 43rpx;
+	background-image: url("https://i.52112.com/icon/jpg/256/20190828/55786/2488959.jpg");
+	background-size: 43rpx 43rpx;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.hideStar{
+	z-index: 2;
+	background-image: url("https://i.52112.com/icon/jpg/256/20200408/73169/3109032.jpg");
+	width: 63rpx;
+	height: 43rpx;
+	background-size: 43rpx 43rpx;
+	background-position: center center;
+	background-repeat: no-repeat;
+}

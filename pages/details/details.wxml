@@ -1,0 +1,38 @@
+<wxs src="../../scripts/common.wxs" module="string"></wxs>
+<view class="container">
+	<view class="details">
+		<view class="bookInfo">
+			<view class="books">
+				<view class="book-image">
+					<image src="{{string.substr(books.cover,7)}}"></image>
+				</view>
+				<view class="book-details">
+					<view class="book-title">{{books.title}}</view>
+					<view class="book-score">
+						<view  class="stars  {{books.rating.score>=2? '': 'hideStar'}}"  ></view>
+            <view class="stars  {{books.rating.score>=4? '': 'hideStar'}}"  ></view>
+            <view class="stars  {{books.rating.score>=6? '': 'hideStar'}}"  ></view>
+            <view class="stars  {{books.rating.score>=8? '': 'hideStar'}}"  ></view>
+            <view  class="stars  {{books.rating.score>=10? '': 'hideStar'}}"  ></view>
+					</view>
+					<view>
+						<text class="author"></text>
+						<text class="majorCat"></text>
+					</view>
+					<view>
+						<text class="wordcount"></text>
+						<text class="updated"></text>
+					</view>
+				</view>
+			</view>
+			<view>
+				<text class="latelyFollower"></text>
+				<text class="retentionRatio"></text>
+				<text class="serializeWordCount"></text>
+			</view>
+		</view>
+		<view class="longIntro">
+
+		</view>
+	</view>
+</view>

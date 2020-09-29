@@ -18,38 +18,47 @@ Page({
       }
     ],
     navbar: [{
-      url:'/pages/rank/rank',
+      url: '/pages/rank/rank',
       img: '/images/ranking.png',
       text: '排行榜'
     }, {
-      url:'/pages/rank/rank',
+      url: '/pages/rank/rank',
       img: '/images/VIP.png',
       text: 'VIP'
     }, {
-      url:'/pages/rank/rank',
+      url: '/pages/rank/rank',
       img: '/images/classify.png',
       text: '分类'
     }],
   },
-  params(e){
+  todetails(e){
+    let query=e.currentTarget.dataset.query
+    wx.navigateTo({
+      url:'/pages/details/details'+query
+    })
+  },
+
+
+  params(e) {
     // 获取导航跳转url 并且给url添加文本参数text 修改跳转页面的navbar
-    let navbar=this.data.navbar;
-    let index=e.currentTarget.dataset.index;
-    for(let i=0;i<navbar.length;i++){
-      if(index==i){
-        let url=navbar[i].url
-        let text=navbar[i].text
-        if(url.indexOf(text)==-1){
-          url=url+'?text='+text
+    let navbar = this.data.navbar;
+    let index = e.currentTarget.dataset.index;
+    for (let i = 0; i < navbar.length; i++) {
+      if (index == i) {
+        let url = navbar[i].url
+        let text = navbar[i].text
+        if (url.indexOf(text) == -1) {
+          url = url + '?text=' + text
+          this.setData({
+            [`navbar[${i}].url`]: url
+          })
         }
-        this.setData({
-          [`navbar[${i}].url`]:url
-        })
+        
         // console.log(url)
         wx.navigateTo({
-            url:this.data.navbar[i].url
+          url: this.data.navbar[i].url
         })
-      }     
+      }
     }
   },
   tosearch() {
@@ -58,7 +67,8 @@ Page({
     })
   },
   onLoad: function () {
-    // 获取全部榜单
+    setTimeout(() => {
+  
     wx.request({
       url: 'https://api.zhuishushenqi.com/ranking/gender',
       method: 'GET',
@@ -89,8 +99,8 @@ Page({
                     // console.log(book2)
                     //更改data中recommend数组中的books数组
                     this.setData({
-                      'recommend[0].books': book1,
-                      'recommend[2].books': book2
+                      ['recommend[0].books']: book1,
+                      ['recommend[2].books']: book2
                     })
                     // console.log(this.data.recommend)
                   }
@@ -126,8 +136,13 @@ Page({
         })
 
       }
+
     })
-   
+  }, 3000);
+
+  },
+  onShow() {
+    // 获取全部榜单
 
   }
 })
