@@ -1,27 +1,32 @@
+
 <wxs src="../../scripts/common.wxs" module="string"></wxs>
 <view class="container">
 	<view class="details">
 		<view class="bookInfo">
 			<view class="books">
+				<!-- 书籍图片 -->
 				<view class="book-image">
 					<image src="{{string.substr(books.cover,7)}}"></image>
 				</view>
+				<!-- 书籍详情 -->
 				<view class="book-details">
 					<view class="book-title">{{books.title}}</view>
 					<view class="book-score">
+						<text class="scoretext">{{string.float(books.rating.score)}}</text>
 						<view  class="stars  {{books.rating.score>=2? '': 'hideStar'}}"  ></view>
             <view class="stars  {{books.rating.score>=4? '': 'hideStar'}}"  ></view>
             <view class="stars  {{books.rating.score>=6? '': 'hideStar'}}"  ></view>
             <view class="stars  {{books.rating.score>=8? '': 'hideStar'}}"  ></view>
-            <view  class="stars  {{books.rating.score>=10? '': 'hideStar'}}"  ></view>
+						<view  class="stars  {{books.rating.score>=10? '': 'hideStar'}}"  ></view>
+						<text class="evaluateCount">丨{{books.rating.count}}人评</text>
 					</view>
 					<view>
-						<text class="author"></text>
-						<text class="majorCat"></text>
+						<text class="author">{{books.author}}</text>
+						<text class="majorCat">丨{{books.majorCate}}</text>
 					</view>
 					<view>
-						<text class="wordcount"></text>
-						<text class="updated"></text>
+						<text class="wordcount">{{string.float(books.wordCount)}}万字</text>
+						<text class="updated">{{books.updated}}</text>
 					</view>
 				</view>
 			</view>

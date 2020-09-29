@@ -19,7 +19,7 @@ Page({
 			url:'https://api.zhuishushenqi.com/book/'+params.id,
 			method:'GET',
 			success:res=>{
-				console.log(res.data.rating.score)
+				console.log(res.data)
 				this.setData({
 					books:res.data
 				})

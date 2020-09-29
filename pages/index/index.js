@@ -67,7 +67,7 @@ Page({
     })
   },
   onLoad: function () {
-    setTimeout(() => {
+    
   
     wx.request({
       url: 'https://api.zhuishushenqi.com/ranking/gender',
@@ -138,7 +138,7 @@ Page({
       }
 
     })
-  }, 3000);
+ 
 
   },
   onShow() {
