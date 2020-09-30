@@ -1,3 +1,4 @@
+const moment=require('../../utils/moment.min.js')
 // pages/details/details.js
 Page({
 
@@ -5,6 +6,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
+		date:'',
 		books:{},
 	},
 
@@ -21,7 +23,8 @@ Page({
 			success:res=>{
 				console.log(res.data)
 				this.setData({
-					books:res.data
+					books:res.data,
+					date:moment(res.data.updated).fromNow()
 				})
 			}
 		})

@@ -1,6 +1,6 @@
-var substr = function (str, start) {
+var substr = function (str, start,end) {
 	if (str) {
-		var data = decodeURIComponent(str).substring(start);
+		var data = decodeURIComponent(str).substring(start,end);
 		return data;
 	}
 };
@@ -24,6 +24,7 @@ var deltitle = function (str) {
 		return title
 	}
 };
+
 module.exports = {
 	deltitle: deltitle,
 	substr: substr,
