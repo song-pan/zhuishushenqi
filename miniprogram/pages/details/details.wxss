@@ -1,0 +1,115 @@
+/* 书籍详情 */
+.books {
+	display: flex;
+}
+
+.book-details {
+	color: #888787c7;
+	margin-left: 20rpx;
+}
+
+.book-image image {
+	width: 190rpx;
+	height: 253rpx;
+	border-radius: 6rpx;
+}
+
+.book-title {
+	color: #000;
+	font-size: 36rpx;
+	font-weight: bold;
+}
+
+.book-score {
+	position: relative;
+	display: flex;
+	margin: 20rpx 0;
+}
+
+/* 分数的字体 */
+.scoretext {
+	line-height: 35rpx;
+	margin-right: 20rpx;
+	color: #f8c330;
+	font-size: 40rpx;
+}
+
+/* 灰色星星 */
+.stars {
+	z-index: 1;
+	width: 43rpx;
+	height: 33rpx;
+	background-image: url("https://i.52112.com/icon/jpg/256/20190828/55786/2488959.jpg");
+	background-size: 33rpx 33rpx;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+/* 黄色星星 */
+.hideStar {
+	z-index: 2;
+	background-image: url("https://i.52112.com/icon/jpg/256/20200408/73169/3109032.jpg");
+	width: 43rpx;
+	height: 33rpx;
+	background-size: 33rpx 33rpx;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+/* 评价人数 */
+.evaluateCount {
+	line-height: 35rpx;
+	font-size: 26rpx;
+}
+
+.author,
+.majorCat {
+	font-size: 26rpx;
+}
+
+.author {
+	color: #DC143C;
+}
+
+.wordcount,
+.updated {
+	font-size: 26rpx;
+}
+
+/* 追书数据 人气 留存 日更 */
+.computed {
+	margin-top: 20rpx;
+	display: flex;
+	justify-content: space-around;
+	color: #858E98;
+	font-size: 36rpx;
+}
+
+.computed-text {
+	font-weight: bold;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.computed-text text {
+	margin-top: 10rpx;
+	font-size: 26rpx;
+	color: #888787c7;
+}
+
+/* 简介 */
+.longIntro {
+	margin-top: 100rpx;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.subtitle {
+	font-weight: bold;
+	font-size: 36rpx;
+	margin: 20rpx 0;
+}

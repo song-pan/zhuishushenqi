@@ -1,0 +1,3 @@
+<view wx:for="{{[1,2,3,4,5]}}" wx:key="index" >
+		<text class="red {{aa==index ? 'black' :'' }}" bindtap="aaa" data-a="{{index}}">{{item}}</text>
+</view>

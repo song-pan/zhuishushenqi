@@ -1,0 +1,32 @@
+var substr = function (str, start,end) {
+	if (str) {
+		var data = decodeURIComponent(str).substring(start,end);
+		return data;
+	}
+};
+var float = function (num) {
+	if (num) {
+		if (num > 10000) {
+			var data = (num / 10000).toFixed(1)
+			return data
+		} else {
+			var data=parseFloat(num).toFixed(1)
+			return data
+		}
+	}
+};
+// 去除文字的括号 包括中文和英文括号
+var deltitle = function (str) {
+	// if(str.indexOf(' '))
+	if (str) {
+		var reg = getRegExp('[\(（][^\)）]+[\)）]$', 'g');
+		var title = str.replace(reg, '');
+		return title
+	}
+};
+
+module.exports = {
+	deltitle: deltitle,
+	substr: substr,
+	float: float
+};

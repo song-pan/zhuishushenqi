@@ -1,0 +1,5 @@
+@import  "style/iconfont.wxss";
+.container{
+  /* border: 1rpx solid #000; */
+  margin: 0 30rpx;
+}

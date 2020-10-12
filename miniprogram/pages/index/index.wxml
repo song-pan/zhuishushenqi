@@ -1,0 +1,65 @@
+<wxs src="../../scripts/common.wxs" module="string"></wxs>
+<view class="container">
+	<!-- 登录授权 -->
+	<button wx:if="{{canIUSE}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo"></button>
+	<view wx:else>请升级微信版本</view>
+	<!-- 搜索跳转框 -->
+	<view hover-class="search-hover">
+		<image class="search-png" src="cloud://images-1gyye2fc2ca6611d.696d-images-1gyye2fc2ca6611d-1303259837/images/search.png" mode="widthFix" bindtap="tosearch"></image>
+	</view>
+	<!-- 轮播图 -->
+	<view>
+		<swiper autoplay="true">
+			<swiper-item>
+				<image src="cloud://images-1gyye2fc2ca6611d.696d-images-1gyye2fc2ca6611d-1303259837/images/swiper/swiper1.png" mode="widthFix"></image>
+			</swiper-item>
+			<swiper-item>
+				<image src="cloud://images-1gyye2fc2ca6611d.696d-images-1gyye2fc2ca6611d-1303259837/images/swiper/swiper2.png" mode="widthFix"></image>
+			</swiper-item>
+			<swiper-item>
+				<image src="cloud://images-1gyye2fc2ca6611d.696d-images-1gyye2fc2ca6611d-1303259837/images/swiper/swiper3.png" mode="widthFix"></image>
+			</swiper-item>
+			<swiper-item>
+				<image src="cloud://images-1gyye2fc2ca6611d.696d-images-1gyye2fc2ca6611d-1303259837/images/swiper/swiper4.png" mode="widthFix"></image>
+			</swiper-item>
+		</swiper>
+	</view>
+	<!-- 导航栏 -->
+	<view class="navbar">
+		<view bindtap="params" wx:for="{{navbar}}" wx:key="index"  url="{{item.url}}" data-index="{{index}}">
+			<view class="icon-style"  >
+				<image src="{{item.img}}" mode="widthFix"></image>
+				<text>{{item.text}}</text>
+			</view>
+		</view>
+	</view>
+	<!-- 首页推荐 -->
+	<view class="recommend">
+		<!-- 分类类别 -->
+		<view class="category" wx:for="{{recommend}}" wx:key="index">
+			<text>{{item.headline}}</text>
+			<navigator bindtap="tomore">查看更多<text> ></text></navigator>
+			<!-- 书籍信息 -->
+			<view bindtap="todetails" class="content" wx:for="{{item.books}}" wx:for-item="book" wx:key="index" data-query="{{'?id='+book._id+'&title='+book.title}}">
+				<view class="content-img">
+					<image src="{{string.substr(book.cover,7)}}" ></image>
+				</view>
+				<view class="article">
+					<view class="title">{{string.deltitle(book.title)}}</view>
+					<view class="shortInro">{{book.longIntro}}</view>
+					<view>
+						<text class="author"><text class="iconfont icon-wode"></text>{{book.author}}</text>
+						<text
+							class="latelyFollower">{{book.latelyFollower>10000 ?string.float(book.latelyFollower)+'万': book.latelyFollower}}人气</text>
+							<text class="grayicon">
+								<text>{{string.float(book.rating.score)}}</text>
+								<text>{{book.isSerial? '连载':'完本'}}</text>
+								<text>{{book.majorCate}}</text>
+						</text>
+					</view>
+				</view>
+			</view>
+		</view>
+
+	</view>
+</view>
