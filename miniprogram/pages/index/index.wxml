@@ -40,7 +40,7 @@
 			<text>{{item.headline}}</text>
 			<navigator bindtap="tomore">查看更多<text> ></text></navigator>
 			<!-- 书籍信息 -->
-			<view bindtap="todetails" class="content" wx:for="{{item.books}}" wx:for-item="book" wx:key="index" data-query="{{'?id='+book._id+'&title='+book.title}}">
+			<view bindtap="todetails" class="content" wx:for="{{item.books}}" wx:for-item="book" wx:key="index"  data-query="{{'?id='+book._id+'&title='+book.title}}">
 				<view class="content-img">
 					<image src="{{string.substr(book.cover,7)}}" ></image>
 				</view>

@@ -1,2 +1,33 @@
-<!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<view class="container"> 
+	<view class="input">
+		<image src="../../images/search.png"></image>
+		<input class="search" type="text" value="{{inputVal}}" bindinput="inputTyping" placeholder="请输入搜索内容" placeholder-style="color:rgb(213,213,219)"/>
+	</view>
+</view>
+<view class="list" wx:if="{{list.length>0}}" bindtap="selected"  style="background-color:white;position:absolute">
+	<view wx:for="{{list}}" wx:key="index"  >
+			<text data-index="{{item}}">{{item}}</text>
+	</view>
+</view>
+<view>
+	Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex in hic facilis dignissimos, eaque odio eveniet! Aut tenetur qui quis repellat labore, iste id cupiditate eos error? Non, autem quasi.
+	Aliquam eligendi placeat itaque, sint aliquid sit dignissimos quia libero. Commodi, quod ea cumque nobis enim voluptas harum recusandae earum aliquam quisquam aperiam asperiores nam modi nostrum tempore architecto voluptates.
+	Optio deserunt dolor voluptatem veritatis quis a modi nostrum fugiat earum, maiores suscipit pariatur, repudiandae atque aspernatur sunt consequuntur neque eaque fuga vero? Minus dolores, placeat doloremque est quidem laboriosam.
+	Animi atque velit in maiores! Fuga excepturi totam, ipsam corporis vitae obcaecati aut ratione accusantium dolore autem. Minima, accusamus tempora ab magnam est consequatur odit libero voluptatum nihil eum enim.
+	Architecto debitis mollitia assumenda, harum suscipit numquam consequatur praesentium, fuga, corporis similique a optio corrupti distinctio voluptas unde! Repellat molestias quisquam necessitatibus eius doloribus, quo ullam pariatur maxime. Praesentium, maxime.
+	Eaque nobis error esse placeat ea eius dolor praesentium beatae illo, voluptatem laborum. Est dicta porro corrupti, fugiat beatae quis at minus aliquid incidunt quaerat, tenetur, aut aperiam dolor aliquam.
+	Consequatur repellendus quam inventore quidem voluptatem odio recusandae maxime quae quas, ratione sed distinctio reiciendis esse et asperiores sequi autem illum ullam mollitia tempore, officiis explicabo laboriosam. Sapiente, excepturi! Autem.
+	Officiis repudiandae quidem ducimus cumque similique facilis placeat ipsum nostrum sed debitis? Sapiente, numquam soluta! Necessitatibus suscipit eum soluta aliquid optio distinctio tempore ipsa omnis iusto, explicabo placeat amet nesciunt.
+	Ab animi sunt quisquam nesciunt dignissimos suscipit? Odio et odit aperiam perferendis nemo laborum magnam! Nesciunt incidunt obcaecati asperiores repellendus voluptatem laborum odit tenetur dicta ea, assumenda beatae hic. Cum.
+	Nemo, praesentium nesciunt eos odio quidem perspiciatis nobis saepe est? Soluta vitae maxime nesciunt iste magni ea, odit sint voluptas atque ullam aut in veniam velit sunt non veritatis quia!
+	Assumenda necessitatibus velit quis ad vel animi. Nostrum velit illo aperiam similique debitis quos deleniti quod quam! Possimus aperiam facilis eum veritatis. Enim saepe quo, dolores adipisci ad et alias?
+	Reiciendis, recusandae rerum facilis ipsam dolore libero expedita, consectetur, eum quia perspiciatis animi! Doloremque animi labore expedita quam dolore excepturi harum reprehenderit. Recusandae corrupti expedita laborum nisi aliquam quam minima?
+	Aspernatur autem eos quam provident! Ratione, dolor facere atque cupiditate architecto, magnam velit, laboriosam perspiciatis minus earum fugiat aut repellat temporibus molestiae necessitatibus. Similique porro mollitia nihil corrupti quas culpa.
+	Eum culpa facere repellendus nihil ipsa placeat, quis laboriosam, quisquam veritatis cumque blanditiis. Ipsum consequuntur fuga recusandae accusamus dolore voluptatibus magnam quas. Velit, qui placeat? Ipsa numquam vitae odit voluptas?
+	Maxime aliquid ipsa voluptatibus accusamus, minima est debitis harum nisi nostrum veritatis assumenda a ut, excepturi beatae modi dolor maiores expedita porro facilis qui, esse totam quod fugiat! Maxime, quos!
+	Ad beatae vel ipsam ullam obcaecati aperiam, cum et pariatur praesentium excepturi ratione suscipit explicabo cumque quo ab at? Quod nesciunt culpa exercitationem eius cum recusandae id sunt corporis nemo!
+	Eaque fugiat pariatur aperiam neque eveniet mollitia enim aliquid quis vel eos. Natus obcaecati similique, voluptatibus modi laboriosam, assumenda facilis aspernatur maiores dolorum magni dolorem vel sunt autem quod? Voluptates.
+	Quidem dolor ipsam consequuntur reprehenderit fugit aut itaque cupiditate iusto vero commodi. Animi, iste est. Porro provident error, natus itaque perferendis soluta tenetur quas mollitia molestias, voluptatibus aspernatur nisi dolorum?
+	Placeat laboriosam assumenda voluptates culpa quia nemo suscipit in cupiditate, quod, voluptate exercitationem impedit ad temporibus. Incidunt tempore iure nemo ab quis accusamus eaque neque laborum consequuntur ipsum, animi quaerat!
+	Fuga architecto nemo cum soluta fugit provident deserunt reiciendis culpa, dolorum optio libero esse corrupti vitae itaque, dolores odit quas, praesentium iusto voluptates! Sed atque non perspiciatis odit ullam sapiente.
+</view>

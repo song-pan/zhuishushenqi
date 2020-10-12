@@ -5,9 +5,30 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-
+		inputVal:'',
+		list:[],
 	},
-
+selected(e){
+	this.setData({
+		inputVal:e.target.dataset.index
+	})
+},
+inputTyping(e){
+	var value=e.detail.value
+	this.setData({
+		inputVal:value,
+	})
+	wx.request({
+		url: 'https://api.zhuishushenqi.com/book/auto-complete?query='+value,
+		method:'GET',
+		success:res=>{
+			let list=this.data.list
+			this.setData({
+				list:res.data.keywords
+			})
+		}
+	})
+},
 	/**
 	 * 生命周期函数--监听页面加载
 	 */

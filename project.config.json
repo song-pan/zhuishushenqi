@@ -1,11 +1,13 @@
 {
+  "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
   "description": "项目配置文件",
   "packOptions": {
     "ignore": []
   },
   "setting": {
     "urlCheck": true,
-    "es6": true,
+    "es6": false,
     "enhance": false,
     "postcss": true,
     "preloadBackgroundData": false,
@@ -35,7 +37,7 @@
     "packNpmRelationList": []
   },
   "compileType": "miniprogram",
-  "libVersion": "2.13.0",
+  "libVersion": "2.13.1",
   "appid": "wx88de76f50f6bbc80",
   "projectname": "zhuishushenqi",
   "debugOptions": {
@@ -71,9 +73,9 @@
       "list": [
         {
           "id": 0,
-          "name": "书籍详情",
-          "pathName": "pages/details/details",
-          "query": "id=59ba0dbb017336e411085a4e&title=元尊",
+          "name": "搜索框",
+          "pathName": "pages/search/search",
+          "query": "",
           "scene": null
         }
       ]

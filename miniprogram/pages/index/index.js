@@ -90,89 +90,72 @@ Page({
       },
     })
 
-    Http.requestPromise('https://api.zhuishushenqi.com/ranking/gender').then(res=>{
-     return Promise.all([Http.requestPromise('https://api.zhuishushenqi.com/ranking/' + res.data.male[0]._id),
-       Http.requestPromise('https://api.zhuishushenqi.com/ranking/' + res.data.male[5]._id)])
-    }).then(
-      (res)=>{
-        let data = res[0].data.ranking.books;
-            let books = [];
-           
-              for (let i = 0; i <= 7; i++) {
-              let id = data[i]._id
-             
-            let aa=function(){  Http.requestPromise(
-              'https://api.zhuishushenqi.com/book/' + id
-              )}
-             books.push(aa) 
-            }
-            return books
-      }
-    ).then(res=>{
-      console.log(res)
-    })
+    wx.request({
+      url: 'https://api.zhuishushenqi.com/ranking/gender',
+      method: 'GET',
+      success: res => {
         // console.log(res.data.male)
         // 获的男生畅销榜单的id
-        
+        let id = res.data.male[0]._id
+        let id2 = res.data.male[5]._id
         // 通过榜单id获取女生畅销榜单书籍
-        // wx.request({
-        //   url: 'https://api.zhuishushenqi.com/ranking/' + id,
-        //   method: 'GET',
-        //   success: res => {
-        //     // console.log(res.data.ranking.books)
-        //     let data = res.data.ranking.books;
-        //     let books = [];
-        //     for (let i = 0; i <= 7; i++) {
-        //       let id = data[i]._id
-        //       wx.request({
-        //         url: 'https://api.zhuishushenqi.com/book/' + id,
-        //         method: 'GET',
-        //         success: res => {
-        //           books.push(res.data)
-        //           if (books.length > 7) {
-        //             // 获取男生畅销榜前8本，4本给男生热门，4本给大神区
-        //             let book1 = books.splice(0, 4)
-        //             let book2 = books.splice(0, 4)
-        //             // console.log(book2)
-        //             //更改data中recommend数组中的books数组
-        //             this.setData({
-        //               ['recommend[0].books']: book1,
-        //               ['recommend[2].books']: book2
-        //             })
-        //             // console.log(this.data.recommend)
-        //           }
-        //         }
-        //       })
-        //     }
-        //   }
-        // })
-        // // 获取完本榜单
-        // wx.request({
-        //   url: 'https://api.zhuishushenqi.com/ranking/' + id2,
-        //   method: 'GET',
-        //   success: res => {
-        //     let data = res.data.ranking.books
-        //     let books = []
-        //     for (let i = 0; i <= 3; i++) {
-        //       let id = data[i]._id
-        //       wx.request({
-        //         url: 'https://api.zhuishushenqi.com/book/' + id,
-        //         method: 'GET',
-        //         success: res => {
-        //           books.push(res.data)
-        //           if (books.length == 4) {
-        //             this.setData({
-        //               'recommend[1].books': books
-        //             })
-        //           }
-        //         }
-        //       })
-        //     }
-
-        //   }
-        // })
-
-      
+        wx.request({
+          url: 'https://api.zhuishushenqi.com/ranking/' + id,
+          method: 'GET',
+          success: res => {
+            // console.log(res.data.ranking.books)
+            let data = res.data.ranking.books;
+            let books = [];
+            for (let i = 0; i <= 7; i++) {
+              let id = data[i]._id
+              wx.request({
+                url: 'https://api.zhuishushenqi.com/book/' + id,
+                method: 'GET',
+                success: res => {
+                  books.push(res.data)
+                  if (books.length > 7) {
+                    // 获取男生畅销榜前8本，4本给男生热门，4本给大神区
+                    let book1 = books.splice(0, 4)
+                    let book2 = books.splice(0, 4)
+                    // console.log(book2)
+                    //更改data中recommend数组中的books数组
+                    this.setData({
+                      ['recommend[0].books']: book1,
+                      ['recommend[2].books']: book2
+                    })
+                    // console.log(this.data.recommend)
+                  }
+                }
+              })
+            }
+          }
+        })
+        // 获取完本榜单
+        wx.request({
+          url: 'https://api.zhuishushenqi.com/ranking/' + id2,
+          method: 'GET',
+          success: res => {
+            let data = res.data.ranking.books
+            let books = []
+            for (let i = 0; i <= 3; i++) {
+              let id = data[i]._id
+              wx.request({
+                url: 'https://api.zhuishushenqi.com/book/' + id,
+                method: 'GET',
+                success: res => {
+                  books.push(res.data)
+                  if (books.length == 4) {
+                    this.setData({
+                      'recommend[1].books': books
+                    })
+                  }
+                }
+              })
+            }
+          }
+        })
+      }
+    })
 
     
 

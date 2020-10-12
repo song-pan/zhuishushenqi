@@ -1,1 +1,18 @@
-/* pages/search/search.wxss */
+.input{
+	position: relative;
+	padding: 15rpx;
+	border-radius: 20rpx;
+	display: flex; 
+	align-items: center;
+	background-color: rgb(235, 235, 240);
+}
+.input image{
+	width: 35rpx;
+	height: 35rpx;
+}
+.search{
+	flex: 1;
+	margin-left:10rpx ;
+	font-size: 28rpx;
+	background-color: rgb(235, 235, 240);
+}
